@@ -111,7 +111,5 @@ gunicorn exchangerates.api:app --reload
 ## Contributing
 Thanks for your interest in the project! All pull requests are welcome from developers of all skill levels. To get started, simply fork the master branch on GitHub to your personal account and then clone the fork into your development environment.
 
-Madis Väin (madisvain on Github, Twitter) is the original creator of the Exchange Rates API framework.
-
 ## License
 MIT
