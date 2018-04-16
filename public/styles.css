@@ -1,8 +1,8 @@
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 a {
-  color: #202BFF;
+  color: #008282;
 }
 
 /* Highlight.js */
@@ -35,7 +35,7 @@ pre code.http.hljs {
   font-weight: 300;
 }
 #hero nav a.nav-link {
-  color: #202BFF;
+  color: #008282;
 }
 
 #shell {
@@ -48,7 +48,7 @@ pre code.http.hljs {
 
 #features {
   color: #fff;
-  background-color: #202BFF;
+  background-color: #005682;
 }
 #features h3 {
   font-weight: 300;
@@ -57,7 +57,6 @@ pre code.http.hljs {
   letter-spacing: 0;
 }
 #features p {
-  font-family: Lato-Regular;
   font-size: 14px;
   color: #FFFFFF;
   letter-spacing: 0;

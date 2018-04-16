@@ -14,7 +14,7 @@ HISTORY_URL = 'https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.xml'
 LAST_90_URL = 'https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml'
 
 
-@huey.periodic_task(crontab(minute='*/1'))
+@huey.periodic_task(crontab(minute='2', hour= '*/1'))
 def update_rates(history=False):
     r = requests.get(HISTORY_URL if history else LAST_90_URL)
     envelope = ElementTree.fromstring(r.content)

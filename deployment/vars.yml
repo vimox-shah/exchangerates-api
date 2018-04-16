@@ -8,13 +8,13 @@ domains:
 install_path: /srv
 
 # repository
-repository: git@github.com:madisvain/exchangeratesapi.git
+repository: git@github.com:vimox-shah/exchangerates-api.git
 
 # public key for SSH access
 ssh_public_key: ~/.ssh/id_rsa.pub
 
 # Letsencrypt
-certbot_email: madisvain@gmail.com
+#certbot_email: madisvain@gmail.com
 
 # database
 db_name: exchangerates
