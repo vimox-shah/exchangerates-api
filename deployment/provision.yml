@@ -85,7 +85,7 @@
 
     - name: Copy nginx config
       template:
-        src: templates/nginx.j2
+        src: public/nginx.j2
         dest: "/etc/nginx/sites-available/{{ project_name }}.conf"
     
     - name: Enable site
@@ -99,12 +99,12 @@
 
     - name: Copy gunicorn config
       template:
-        src: templates/gunicorn.j2
+        src: public/gunicorn.j2
         dest: "/etc/systemd/system/gunicorn.service"
 
     - name: Copy huey config
       template:
-        src: templates/huey.j2
+        src: public/huey.j2
         dest: "/etc/systemd/system/huey.service"
 
 - import_playbook: deploy.yml

@@ -1,14 +1,13 @@
 from __future__ import division
-
 import datetime
+import os
 from decimal import ROUND_HALF_UP, Decimal
-
 import falcon
 import ujson
 from peewee import fn
-
 from models import ExchangeRates, db
 
+index_page_path = os.path.join("/".join(os.path.abspath(__file__).split("/")[:-2]), "public", "index.html")
 
 class PeeweeConnectionMiddleware(object):
     def process_request(self, req, resp):
@@ -87,6 +86,12 @@ class ExchangeRateResource(object):
             'rates': rates
         })
 
+class StaticResource(object):
+    def on_get(self, req, resp):
+        resp.status = falcon.HTTP_200
+        resp.content_type = 'text/html'
+        with open(index_page_path, 'r') as f:
+            resp.body = f.read()
 
 exchangerates = ExchangeRateResource()
 
@@ -94,5 +99,7 @@ app = falcon.API(middleware=[
     PeeweeConnectionMiddleware(),
     CORSMiddleware(),
 ])
+
+app.add_route('/', StaticResource())
 app.add_route('/api/latest/', exchangerates)
 app.add_route('/api/{date:dt("%Y-%m-%d")}/', exchangerates)

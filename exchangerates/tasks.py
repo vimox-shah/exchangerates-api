@@ -1,7 +1,7 @@
 from datetime import datetime
 from decimal import Decimal
 from xml.etree import ElementTree
-
+from redis import ConnectionPool
 import requests
 from huey import RedisHuey, crontab
 
